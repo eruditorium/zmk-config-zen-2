@@ -1,4 +1,5 @@
-/ combos {
+/ { 
+	combos {
         compatible = "zmk,combos";
 
         Minus {
@@ -116,3 +117,4 @@
             key-positions = <16 19>;
         };
     };
+};
