@@ -38,7 +38,7 @@
 
 / { 
 	macros {
-	mc_selw: mc_selw {
+		mc_selw: mc_selw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
@@ -49,7 +49,7 @@
                 &macro_press &kp LA(LS(LEFT))
                 &macro_pause_for_release
                 &macro_release &kp LA(LS(LEFT))
-                &macro_tap &sl SHORTS_EXT_1
+                &macro_tap &sl 17
             >;
         };
 
@@ -64,7 +64,7 @@
                 &macro_press &kp LS(DOWN)
                 &macro_pause_for_release
                 &macro_release &kp LS(DOWN)
-                &macro_tap &sl SHORTS_EXT_1
+                &macro_tap &sl 17
             >;
         };
 
