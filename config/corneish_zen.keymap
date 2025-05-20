@@ -38,6 +38,56 @@
 
 / { 
 	macros {
+	mc_selw: mc_selw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <
+                &macro_tap &kp LA(LEFT)
+                &macro_tap &kp LA(RIGHT)
+                &macro_press &kp LA(LS(LEFT))
+                &macro_pause_for_release
+                &macro_release &kp LA(LS(LEFT))
+                &macro_tap &sl SHORTS_EXT_1
+            >;
+        };
+
+        mc_seln: mc_seln {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <
+                &macro_tap &kp HOME
+                &macro_tap &kp HOME
+                &macro_press &kp LS(DOWN)
+                &macro_pause_for_release
+                &macro_release &kp LS(DOWN)
+                &macro_tap &sl SHORTS_EXT_1
+            >;
+        };
+
+        mc_delword: mc_delword {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LA(BACKSPACE)>;
+        };
+
+        mc_joinwords: mc_joinwords {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <
+                &macro_tap &kp LA(LEFT)
+                &macro_tap &kp BACKSPACE
+                &macro_tap &kp LA(RIGHT)
+            >;
+        };
+		
         selectline: selectline {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -141,59 +191,6 @@
     };
 };
 
-/ {
-    shortcuts {
-        mc_selw: mc_selw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <
-                &macro_tap &kp LA(LEFT)
-                &macro_tap &kp LA(RIGHT)
-                &macro_press &kp LA(LS(LEFT))
-                &macro_pause_for_release
-                &macro_release &kp LA(LS(LEFT))
-                &macro_tap &sl SHORTS_EXT_1
-            >;
-        };
-
-        mc_seln: mc_seln {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <
-                &macro_tap &kp HOME
-                &macro_tap &kp HOME
-                &macro_press &kp LS(DOWN)
-                &macro_pause_for_release
-                &macro_release &kp LS(DOWN)
-                &macro_tap &sl SHORTS_EXT_1
-            >;
-        };
-
-        mc_delword: mc_delword {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_tap &kp LA(BACKSPACE)>;
-        };
-
-        mc_joinwords: mc_joinwords {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <
-                &macro_tap &kp LA(LEFT)
-                &macro_tap &kp BACKSPACE
-                &macro_tap &kp LA(RIGHT)
-            >;
-        };
-    };
-};
 
 / { 
 	combos {
