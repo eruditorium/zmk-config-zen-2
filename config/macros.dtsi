@@ -1,4 +1,5 @@
-macros {
+/ { 
+	macros {
         selectline: selectline {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -13,3 +14,4 @@ macros {
             label = "SELECTWORD";
         };
     };
+};
