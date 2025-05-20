@@ -11,5 +11,4 @@
 #include "combos.dtsi"
 #include "behaviors.dtsi"
 #include "macros.dtsi"
-#include "shortcut.dtsi"
 #include "keymap.dtsi"
