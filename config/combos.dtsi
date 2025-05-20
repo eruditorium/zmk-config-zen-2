@@ -1,4 +1,4 @@
-combos {
+/ combos {
         compatible = "zmk,combos";
 
         Minus {
