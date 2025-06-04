@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "zmk-helpers/key-labels/42.h"
 #include "zmk-helpers/helper.h"
-#include "combos.dtsi"
-#include "macros.dtsi"
+#include "includes/combos.dtsi"
+#include "includes/macros.dtsi"
 
 // Source key-labels.
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 // Left-hand keys.
