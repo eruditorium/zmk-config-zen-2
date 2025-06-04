@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "zmk-helpers/key-labels/42.h"
 #include "zmk-helpers/helper.h"
+#include "combos.dtsi"
+#include "macros.dtsi"
 
 // Source key-labels.
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 // Left-hand keys.
@@ -35,83 +37,7 @@ ZMK_HOLD_TAP(hmr,
     chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
 };
 
-/ {
-    macros {
-        mc_selw: mc_selw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_tap>,
-                <&kp LA(LEFT)>,
-                <&macro_tap>,
-                <&kp LA(RIGHT)>,
-                <&macro_press>,
-                <&kp LA(LS(LEFT))>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LA(LS(LEFT))>,
-                <&macro_tap>,
-                <&sl 17>;
-        };
 
-        mc_seln: mc_seln {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_tap>,
-                <&kp HOME>,
-                <&macro_tap>,
-                <&kp HOME>,
-                <&macro_press>,
-                <&kp LS(DOWN)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LS(DOWN)>,
-                <&macro_tap>,
-                <&sl 17>;
-        };
-
-        mc_delword: mc_delword {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_tap>, <&kp LA(BACKSPACE)>;
-        };
-
-        mc_joinwords: mc_joinwords {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_tap>,
-                <&kp LA(LEFT)>,
-                <&macro_tap>,
-                <&kp BACKSPACE>,
-                <&macro_tap>,
-                <&kp LA(RIGHT)>;
-        };
-
-        selectline: selectline {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HOME &kp LS(END)>;
-            label = "SELECTLINE";
-        };
-
-        selectword: selectword {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LS(LC(RIGHT))>;
-            label = "SELECTWORD";
-        };
-    };
-};
 
 / {
     keymap {
@@ -196,127 +122,6 @@ ZMK_HOLD_TAP(hmr,
 &trans      &none         &none         &none         &none         &none           &kp C_VOL_DN  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                         &trans        &trans        &trans          &trans        &trans  &trans
             >;
-        };
-    };
-};
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        Minus {
-            bindings = <&kp MINUS>;
-            key-positions = <16 15>;
-        };
-
-        Underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <19 20>;
-        };
-
-        LeftBrace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <5 4>;
-        };
-
-        LeftBracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <16 17>;
-        };
-
-        LeftParenthesis {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <28 29>;
-        };
-
-        RightBrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <6 7>;
-        };
-
-        RightBracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <18 19>;
-        };
-
-        RightParenthesis {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <30 31>;
-        };
-
-        DoubleQuotes {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <28 27>;
-        };
-
-        Quote {
-            bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <31 32>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <22 23>;
-        };
-
-        Undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <25 26>;
-        };
-
-        Copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <24 25>;
-        };
-
-        Paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <35 34>;
-        };
-
-        Word-Delete {
-            bindings = <&kp LC(DEL)>;
-            key-positions = <11 23>;
-        };
-
-        WordBackspace {
-            bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <0 12>;
-        };
-
-        selectline {
-            bindings = <&selectline>;
-            key-positions = <36 37>;
-        };
-
-        selectword {
-            bindings = <&selectword>;
-            key-positions = <40 41>;
-        };
-
-        ae {
-            bindings = <&kp RA(Q)>;
-            key-positions = <13 14>;
-        };
-
-        ue {
-            bindings = <&kp RA(Y)>;
-            key-positions = <7 8>;
-        };
-
-        oe {
-            bindings = <&kp RA(P)>;
-            key-positions = <9 10>;
-        };
-
-        ss {
-            bindings = <&kp RA(S)>;
-            key-positions = <14 15>;
-        };
-
-        capsword {
-            bindings = <&caps_word>;
-            key-positions = <16 19>;
         };
     };
 };
