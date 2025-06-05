@@ -23,7 +23,7 @@
 COMBO(minus,  &kp MINUS,     LM2 LM1,     DEF,          80,  50)
 COMBO(undrscr,&kp UNDERSCORE,RM1 RM2,     DEF,          80,  50)
 COMBO(dqt, 	  &kp DQT,		 LB2 LB1,     DEF,          40, 100)
-COMBO(sqt, 	  &kp SQT,		 LT2 LT1,     DEF,          40, 100)
+COMBO(sqt, 	  &kp SQT,		 RB1 RB2,     DEF,          40, 100)
 
 COMBO(tab,    &kp TAB,       RT1 RT2,     DEF RAI LWR,  40, 100)
 COMBO(bspc,   &kp BSPC,      RM2 RM3,     DEF RAI LWR,  40, 100)
