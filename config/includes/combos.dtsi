@@ -40,7 +40,7 @@ COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF RAI LWR,  40, 100)
 COMBO(sellne, &mc_sell,      LB3 LB2,     DEF,		    40, 100)
 COMBO(selwrd, &mc_selw,      LM3 LM2,     DEF,		    40, 100)
 COMBO(extselw,&mc_ext_sel,   LM3 LM2,     SHRTCT,       40, 100)
-COMBO(extsell,&th_ext_sel LGUI 0, LB3 LB2,SHRTCT,       40, 100)
+COMBO(extsell,&th_ext_sel,   LB3 LB2,     SHRTCT,       40, 100)
 
 COMBO(capswd, &caps_word,    LM1 RM1,     DEF,          60, 200)
 COMBO(lock,   &kp LG(L),     LT4 LT3,     DEF,          80, 500)
