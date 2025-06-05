@@ -17,6 +17,16 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 // Right-hand keys.
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                             // Thumb keys.
 
+ZMK_HOLD_TAP(mt_home, 
+	bindings = <&masked_home>, 
+	<&kp>; MT_CORE
+)
+
+ZMK_HOLD_TAP(mt_end, 
+	bindings = <&masked_end>, 
+	<&kp>; MT_CORE
+)
+
 /* Left-hand HRMs. */
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
