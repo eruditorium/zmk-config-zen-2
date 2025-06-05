@@ -22,32 +22,33 @@
 
 COMBO(minus,  &kp MINUS,     LM1 LM2,     DEF,          80,  50)
 COMBO(undrscr,&kp UNDERSCORE,RM1 RM2,     DEF,          80,  50)
-COMBO(dqt, 	  &kp DQT,		 LB1 LB2,     DEF BRD SYM,  40, 100)
-COMBO(sqt, 	  &kp SQT,		 LT1 LT2,     DEF BRD SYM,  40, 100)
+COMBO(dqt, 	  &kp DQT,		 LB1 LB2,     DEF,          40, 100)
+COMBO(sqt, 	  &kp SQT,		 LT1 LT2,     DEF,          40, 100)
 
-COMBO(tab,    &kp TAB,       RT1 RT2,     DEF BRD SYM,  40, 100)
-COMBO(bspc,   &kp BSPC,      RM2 RM3,     DEF BRD SYM,  40, 100)
-COMBO(esc,    &kp ESC,       LT2 LT3, 	  DEF BRD SYM,  40,   0)
+COMBO(tab,    &kp TAB,       RT1 RT2,     DEF RAI LOW,  40, 100)
+COMBO(bspc,   &kp BSPC,      RM2 RM3,     DEF RAI LOW,  40, 100)
+COMBO(esc,    &kp ESC,       LT2 LT3, 	  DEF RAI LOW,  40,   0)
 
-COMBO(lpar,   &kp LPAR,      LB0 LB1,     DEF BRD SYM,  40, 100)
-COMBO(rpar,   &kp RPAR,      RB0 RB1,     DEF BRD SYM,  40, 100)
-COMBO(lbkt,   &kp LBKT,      LM0 LM1,     DEF BRD SYM,  40, 100)
-COMBO(rbkt,   &kp RBKT,      RM0 RM1,     DEF BRD SYM,  40, 100)
-COMBO(lbkt,   &kp LBRC,      LT0 LT1,     DEF BRD SYM,  40, 100)
+COMBO(lpar,   &kp LPAR,      LB0 LB1,     DEF RAI LOW,  40, 100)
+COMBO(rpar,   &kp RPAR,      RB0 RB1,     DEF RAI LOW,  40, 100)
+COMBO(lbkt,   &kp LBKT,      LM0 LM1,     DEF RAI LOW,  40, 100)
+COMBO(rbkt,   &kp RBKT,      RM0 RM1,     DEF RAI LOW,  40, 100)
+COMBO(lbkt,   &kp LBRC,      LT0 LT1,     DEF RAI LOW,  40, 100)
 
-COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF BRD SYM,  40, 100)
-COMBO(sellne, &selectline,   LB2 LB3,     DEF BRD SYM,  40, 100)
-COMBO(selwrd, &selectword,   LM2 LM3,     DEF BRD SYM,  40, 100)
+COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF RAI LOW,  40, 100)
+COMBO(sellne, &selectline,   LB2 LB3,     DEF,		    40, 100)
+COMBO(selwrd, &selectword,   LM2 LM3,     DEF,		    40, 100)
 
-COMBO(capswd, &caps_word,    LM1 RM1,     DEF BRD,      60, 200)
-COMBO(lock,   &kp LG(L),     LT0 LT1,     DEF BRD,      80, 500)
+COMBO(capswd, &caps_word,    LM1 RM1,     DEF,          60, 200)
+COMBO(lock,   &kp LG(L),     LT0 LT1,     DEF,          80, 500)
 
-COMBO(winq,   &kp LA(F4),    LT2 LT3,     NAV,          80, 200)
-COMBO(undo,   &kp LC(Z),     LB2 LB3,     NAV,          80,  50)
+COMBO(winq,   &kp LA(F4),    LT2 LT3,     DEF,		    80, 200)
+COMBO(undo,   &kp LC(Z),     LB2 LB3,     DEF,		    80,  50)
 
-COMBO(calc,   &kp C_AL_CALC, RT0 RM0,     NAV,         200, 200)
+COMBO(calc,   &kp C_AL_CALC, RT0 RM0,     DEF,         200, 200)
 
-COMBO(indbat, &ind_bat,      LT2 RT2,     FUN,         100, 200)
-COMBO(indcon, &ind_con,      LT1 RT1,     FUN,         100, 200)
+COMBO(indbat, &ind_bat,      LT2 RT2,     ADJ,         100, 200)
+COMBO(indcon, &ind_con,      LT1 RT1,     ADJ,         100, 200)
+
     };
 };
