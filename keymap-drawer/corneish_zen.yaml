@@ -25,7 +25,7 @@ layers:
   - L
   - ;
   - ''''
-  - LC
+  - LCTRL
   - '&hml LCTRL Z'
   - '&hml LWIN X'
   - '&hml LALT C'
