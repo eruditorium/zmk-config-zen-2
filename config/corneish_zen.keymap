@@ -15,6 +15,7 @@
 #define ADJ 3
 #define NAV 4
 #define FUN 5
+#define SHRTCT 6
 
 #include "includes/macros.dtsi"
 #include "includes/behaviors.dtsi"
@@ -30,6 +31,7 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
+		
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -115,5 +117,15 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
                                         &trans        &trans        &trans          &trans        &trans  &trans
             >;
         };
+		
+		 shortcuts_ext_1_layer {
+            display-name = "SHRTCT";
+            bindings = <
+   &trans	&trans		&trans		&trans		&trans		&trans              &trans              &trans              &mc_ext_sel	&trans	&trans  &trans    
+   &trans   &trans      &trans      &trans      &trans      &trans              &trans              &th_ext_sel LGUI 0  &trans      &trans  &trans  &trans
+   &trans   &trans      &trans      &trans      &trans      &trans              &trans              &trans              &trans      &trans  &trans  &trans
+                                    &trans      &trans      &trans              &trans              &trans              &trans
+                           >;
+                };
     };
 };
