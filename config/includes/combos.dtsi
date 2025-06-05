@@ -37,10 +37,8 @@ COMBO(lbrc,   &kp LBRC,      LT1 LT0,     DEF RAI LWR,  40, 100)
 COMBO(rbrc,   &kp RBRC,      RT0 RT1,     DEF RAI LWR,  40, 100)
 
 COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF RAI LWR,  40, 100)
-COMBO(selln,  &mc_seln,      LB3 LB2,     DEF,		    40, 100)
-COMBO(selwrd, &mc_selw,      LM3 LM2,     DEF,		    40, 100)
-/*COMBO(extselw,&mc_ext_sel, LM3 LM2,   SHRTCT,       40, 100)
-COMBO(extseln,&th_ext_sel,   LB3 LB2,     SHRTCT,       40, 100)*/
+COMBO(selln,  &selline,      LB3 LB2,     DEF,		    40, 100)
+COMBO(selwrd, &selword,      LM3 LM2,     DEF,		    40, 100)
 
 COMBO(capswd, &caps_word,    LM1 RM1,     DEF,          60, 200)
 COMBO(lock,   &kp LG(L),     LT4 LT3,     DEF,          80, 500)

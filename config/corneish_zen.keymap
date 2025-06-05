@@ -13,7 +13,6 @@
 #define RAI 1
 #define LWR 2
 #define ADJ 3
-#define SHRTCT 4
 
 #include "includes/behaviors.dtsi"
 #include "includes/shortcuts.dtsi"
@@ -113,14 +112,5 @@
             >;
         };
 		
-		 shortcuts_ext_1_layer {
-            display-name = "SHRTCT";
-            bindings = <
-   &trans	&trans		&trans		&trans		&trans		&trans              &trans              &trans              &mc_ext_sel	&trans	&trans  &trans    
-   &trans   &trans      &trans      &trans      &trans      &trans              &trans              &th_ext_sel LGUI 0  &trans      &trans  &trans  &trans
-   &trans   &trans      &trans      &trans      &trans      &trans              &trans              &trans              &trans      &trans  &trans  &trans
-                                    &trans      &trans      &trans              &trans              &trans              &trans
-                           >;
-                };
     };
 };
