@@ -14,13 +14,10 @@
 #define LWR 2
 #define ADJ 3
 
-#include "includes/behaviors.dtsi"
-#include "includes/shortcuts.dtsi"
 #include "includes/macros.dtsi"
+#include "includes/behaviors.dtsi"
 #include "includes/combos.dtsi"
 
-/*#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
-#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.*/
 #define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
 #define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
