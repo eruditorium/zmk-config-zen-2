@@ -1,5 +1,43 @@
 / {
     macros {
+        mc_selw: mc_selw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_tap>,
+                <&kp LA(LEFT)>,
+                <&macro_tap>,
+                <&kp LA(RIGHT)>,
+                <&macro_press>,
+                <&kp LA(LS(LEFT))>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LA(LS(LEFT))>,
+                <&macro_tap>,
+                <&sl 17>;
+        };
+
+        mc_seln: mc_seln {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LS(DOWN)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LS(DOWN)>,
+                <&macro_tap>,
+                <&sl 17>;
+        };
+
         mc_delword: mc_delword {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
