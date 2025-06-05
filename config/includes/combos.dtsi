@@ -33,14 +33,15 @@ COMBO(lpar,   &kp LPAR,      LB0 LB1,     DEF RAI LWR,  40, 100)
 COMBO(rpar,   &kp RPAR,      RB0 RB1,     DEF RAI LWR,  40, 100)
 COMBO(lbkt,   &kp LBKT,      LM0 LM1,     DEF RAI LWR,  40, 100)
 COMBO(rbkt,   &kp RBKT,      RM0 RM1,     DEF RAI LWR,  40, 100)
-COMBO(lbkt,   &kp LBRC,      LT0 LT1,     DEF RAI LWR,  40, 100)
+COMBO(lbrc,   &kp LBRC,      LT0 LT1,     DEF RAI LWR,  40, 100)
+COMBO(rbrc,   &kp RBRC,      RT0 RT1,     DEF RAI LWR,  40, 100
 
 COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF RAI LWR,  40, 100)
 COMBO(sellne, &selectline,   LB2 LB3,     DEF,		    40, 100)
 COMBO(selwrd, &selectword,   LM2 LM3,     DEF,		    40, 100)
 
 COMBO(capswd, &caps_word,    LM1 RM1,     DEF,          60, 200)
-COMBO(lock,   &kp LG(L),     LT0 LT1,     DEF,          80, 500)
+COMBO(lock,   &kp LG(L),     LT3 LT4,     DEF,          80, 500)
 
 COMBO(winq,   &kp LA(F4),    LT2 LT3,     DEF,		    80, 200)
 COMBO(undo,   &kp LC(Z),     LB2 LB3,     DEF,		    80,  50)
