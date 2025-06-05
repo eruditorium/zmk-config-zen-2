@@ -28,12 +28,12 @@
 
 ZMK_HOLD_TAP(mt_home, 
 	bindings = <&masked_home>, 
-	<&kp>; MT_CORE;
+	<&kp>; MT_CORE
 )
 
 ZMK_HOLD_TAP(mt_end, 
 	bindings = <&masked_end>, 
-	<&kp>; MT_CORE;
+	<&kp>; MT_CORE
 )
 
 /* Left-hand HRMs. */
