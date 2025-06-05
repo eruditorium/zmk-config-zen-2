@@ -13,9 +13,7 @@
 #define RAI 1
 #define LWR 2
 #define ADJ 3
-#define NAV 4
-#define FUN 5
-#define SHRTCT 6
+#define SHRTCT 4
 
 #include "includes/macros.dtsi"
 #include "includes/shortcuts.dtsi"
