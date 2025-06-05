@@ -20,8 +20,8 @@
 #include "includes/shortcuts.dtsi"
 #include "includes/combos.dtsi"
 
-#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
-#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+/*#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.*/
 #define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
 #define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
@@ -63,8 +63,8 @@
             //                                      `--------------------------'  `--------------------------'
 
             bindings = <
-&trans  &kp CAPSLOCK    &kp HOME  &kp NAV_UP     &kp PG_UP      &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS      &kp LC(BSPC)
-&trans  &kp KP_NUMLOCK  &kp NAV_LEFT &kp NAV_DOWN &kp NAV_RIGHT &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS     &kp EQUAL
+&trans  &kp CAPSLOCK    &kp HOME  &kp NAV_UP     &kp PG_UP  &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS      &kp LC(BSPC)
+&trans  &kp KP_NUMLOCK  &kp LEFT  &kp NAV_DOWN   &kp RIGHT  &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS     &kp EQUAL
 &trans  &kp LS(F10)     &kp END   &kp LC(S)  &kp PAGE_DOWN  &kp LPAR    &kp RPAR  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &trans
                                   &trans     &trans         &trans      &trans    &mo 3   &kp N0
             >;
