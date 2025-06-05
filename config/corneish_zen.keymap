@@ -14,8 +14,9 @@
 #define NAV 4
 #define FUN 5
 
-#include "includes/combos.dtsi"
 #include "includes/behaviors.dtsi"
+#include "includes/combos.dtsi"
+
 
 / {
     chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
