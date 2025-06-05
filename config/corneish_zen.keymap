@@ -18,6 +18,7 @@
 #define SHRTCT 6
 
 #include "includes/macros.dtsi"
+#include "includes/shortcuts"
 #include "includes/behaviors.dtsi"
 #include "includes/combos.dtsi"
 
