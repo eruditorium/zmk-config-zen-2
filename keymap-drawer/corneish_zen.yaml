@@ -25,7 +25,7 @@ layers:
   - L
   - ;
   - ''''
-  - LSHFT
+  - LC
   - '&hml LCTRL Z'
   - '&hml LWIN X'
   - '&hml LALT C'
