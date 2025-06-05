@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: corneish_zen, layout_name: foostan_corne_6col_layout}
 layers:
-  QWERTY:
+  DEF:
   - ESC
   - Q
   - W
@@ -38,12 +38,12 @@ layers:
   - '&hmr RCTRL SLASH'
   - RSHFT
   - BSPC
-  - {t: ESC, h: NUMBER}
+  - {t: ESC, h: LWR}
   - RETURN
   - SPACE
-  - {t: TAB, h: SYMBOL}
+  - {t: TAB, h: RAI}
   - '&hmr RALT DEL'
-  NUMBER:
+  LWR:
   - {t: ▽, type: trans}
   - CAPSLOCK
   - HOME
@@ -84,9 +84,9 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '3'
+  - ADJ
   - '0'
-  SYMBOL:
+  RAI:
   - '`'
   - '!'
   - '@'
@@ -124,12 +124,12 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '3'
+  - ADJ
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '3':
+  ADJ:
   - {t: ▽, type: trans}
   - ''
   - ''
