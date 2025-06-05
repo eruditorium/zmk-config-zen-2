@@ -20,6 +20,16 @@
 #include "includes/behaviors.dtsi"
 #include "includes/combos.dtsi"
 
+ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
+ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
+
+#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+#define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
+#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
+#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -31,13 +41,13 @@
             // | ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  |   |
             // | TAB  |  A  |  S  |  D* |  F* |  G  |   |  H  |  J*  |  K* |  L  |  ;  |  '   |
             // | CTRL |  Z* |  X* |  C  |  V  |  B  |   |  N  |  M   |  ,* |  .* |  /  | EQUAL|
-            //                    |BKSP |LWR* |ENT* |   | SPC | RSE* |DEL* |
+            //                    |BKSP | LWR*| ENT |   | SPC | RSE* | DEL |
 
             bindings = <
 &kp ESC    &kp Q        &kp W       &kp E       &kp R              &kp T         &kp Y      &kp U               &kp I           &kp O         &kp P            &kp BSPC
 &kp TAB    &kp A        &kp S       &kp D       &hml LEFT_SHIFT F  &kp G         &kp H      &hmr RIGHT_SHIFT J  &kp K           &kp L         &kp SEMI         &kp SQT
 &kp LCTRL  &hml LCTRL Z &hml LWIN X &hml LALT C &kp V              &kp B         &kp N      &kp M               &hmr RALT COMMA  &hmr RGUI DOT  &hmr RCTRL SLASH  &kp RSHFT
-                                    &kp BSPC    &lt 1 ESC          &kp RETURN    &kp SPACE  &lt 2 TAB           &hmr RALT DEL
+                                    &kp NAV_BSPC    &lt 1 ESC      &kp RETURN    &kp SPACE  &lt 2 TAB           &kp NAV_DEL
             >;
         };
 
@@ -56,8 +66,8 @@
             //                                      `--------------------------'  `--------------------------'
 
             bindings = <
-&trans  &kp CAPSLOCK    &kp HOME  &kp UP     &kp PG_UP      &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS      &kp LC(BSPC)
-&trans  &kp KP_NUMLOCK  &kp LEFT  &kp DOWN   &kp RIGHT      &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS     &kp EQUAL
+&trans  &kp CAPSLOCK    &kp HOME  &kp NAV_UP     &kp PG_UP      &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS      &kp LC(BSPC)
+&trans  &kp KP_NUMLOCK  &kp NAV_LEFT &kp NAV_DOWN &kp NAV_RIGHT &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS     &kp EQUAL
 &trans  &kp LS(F10)     &kp END   &kp LC(S)  &kp PAGE_DOWN  &kp LPAR    &kp RPAR  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &trans
                                   &trans     &trans         &trans      &trans    &mo 3   &kp N0
             >;
