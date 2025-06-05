@@ -34,7 +34,7 @@ COMBO(rpar,   &kp RPAR,      RB0 RB1,     DEF RAI LWR,  40, 100)
 COMBO(lbkt,   &kp LBKT,      LM0 LM1,     DEF RAI LWR,  40, 100)
 COMBO(rbkt,   &kp RBKT,      RM0 RM1,     DEF RAI LWR,  40, 100)
 COMBO(lbrc,   &kp LBRC,      LT0 LT1,     DEF RAI LWR,  40, 100)
-COMBO(rbrc,   &kp RBRC,      RT0 RT1,     DEF RAI LWR,  40, 100
+COMBO(rbrc,   &kp RBRC,      RT0 RT1,     DEF RAI LWR,  40, 100)
 
 COMBO(equal,  &kp EQUAL,     RM3 RM4,     DEF RAI LWR,  40, 100)
 COMBO(sellne, &selectline,   LB2 LB3,     DEF,		    40, 100)
