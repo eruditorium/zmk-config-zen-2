@@ -15,9 +15,9 @@
 #define ADJ 3
 #define SHRTCT 4
 
+#include "includes/behaviors.dtsi"
 #include "includes/macros.dtsi"
 #include "includes/shortcuts.dtsi"
-#include "includes/behaviors.dtsi"
 #include "includes/combos.dtsi"
 
 #define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
