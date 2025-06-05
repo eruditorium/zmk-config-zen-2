@@ -48,8 +48,8 @@ COMBO(undo,   &kp LC(Z),     LB2 LB3,     DEF,		    80,  50)
 
 COMBO(calc,   &kp C_AL_CALC, RT0 RM0,     DEF,         200, 200)
 
-COMBO(indbat, &ind_bat,      LT2 RT2,     ADJ,         100, 200)
-COMBO(indcon, &ind_con,      LT1 RT1,     ADJ,         100, 200)
+/*COMBO(indbat, &ind_bat,      LT2 RT2,     ADJ,         100, 200)
+COMBO(indcon, &ind_con,      LT1 RT1,     ADJ,         100, 200)*/
 
     };
 };
