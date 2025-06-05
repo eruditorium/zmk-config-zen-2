@@ -4,7 +4,9 @@
 #include <zmk-helpers/key-labels/42.h>
 #include <zmk-helpers/helper.h>
 
-#include "includes/macros.dtsi"
+/ {
+    chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
+};
 
 // Layer aliases
 #define DEF 0
@@ -14,13 +16,9 @@
 #define NAV 4
 #define FUN 5
 
+#include "includes/macros.dtsi"
 #include "includes/behaviors.dtsi"
 #include "includes/combos.dtsi"
-
-
-/ {
-    chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
-};
 
 / {
     keymap {
@@ -98,7 +96,7 @@
         //                                      │    ▼   │    ▼   │    ▼   │  │    ▼   │    ▼   │    ▼   │ 
         //                                      `--------------------------'  `--------------------------'
 
-        adj {
+        adjust {
 			display-name = "ADJ";
             bindings = <
 &trans      &none         &none         &none         &kp PSCRN     &none           &kp C_MUTE    &kp F7  &kp F8  &kp F9  &kp F12  &trans
