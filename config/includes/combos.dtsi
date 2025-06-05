@@ -3,7 +3,7 @@
 │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
 │ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
 │ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
-╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
+╰───────╮  LH2 LH1 LH0│  RH0 RH1 RH2 ╭───────╯
         ╰─────────────┴─────────────╯       */
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
@@ -44,7 +44,6 @@
 	COMBO(lock,   &kp LG(L),     LT4 LT3,     DEF,          80, 500)
 
 	COMBO(winq,   &kp LA(F4),    LT3 LT2,     DEF,		    80, 200)
-	COMBO(undo,   &kp LC(Z),     LB3 LB2,     DEF,		    80,  50)
 
 	COMBO(calc,   &kp C_AL_CALC, RT0 RM0,     DEF,         200, 200)
     };
