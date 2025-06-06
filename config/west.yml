@@ -17,24 +17,14 @@ manifest:
       revision: caksoylar/zen-v1+v2  # custom branch name
       import: app/west.yml
       
-    - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
-      
+    # ZMK modules
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
     - name: zmk-helpers
       remote: urob
       revision: main
-      
-    # ZMK modules
-    - name: zmk-adaptive-key
-      path: modules/zmk/adaptive-key
-    - name: zmk-auto-layer
-      path: modules/zmk/auto-layer
-    - name: zmk-helpers
-      path: modules/zmk/helpers
-    - name: zmk-leader-key
-      path: modules/zmk/leader-key
-    - name: zmk-tri-state
-      path: modules/zmk/tri-state
+ 
+
   self:
     path: config
