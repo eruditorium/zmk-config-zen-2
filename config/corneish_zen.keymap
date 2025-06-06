@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <zmk-helpers/key-labels/42.h>
 #include <zmk-helpers/helper.h>
+#include <behaviors/num_word.dtsi> // Requires auto-layer module.
 
 / {
     chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
