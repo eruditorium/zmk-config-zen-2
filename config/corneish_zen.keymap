@@ -174,8 +174,8 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
             //                                      `--------------------------'  `--------------------------'
 
             bindings = <
-            &trans  &kp N7   &kp N8  &kp N9  &kp ASTERISK   &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS      &kp LC(BSPC)
-            &trans  &kp N4   &kp N5  &kp N6  &kp SLASH      &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS     &kp none
+            &trans  &kp N7   &kp N8  &kp N9  &kp ASTERISK   &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp PLUS   &kp LC(BSPC)
+            &trans  &kp N4   &kp N5  &kp N6  &kp SLASH      &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp MINUS  &none
             &trans  &kp N1   &kp N2  &kp N3  &kp EQUAL      &kp LPAR    &kp RPAR  &kp N1  &kp N2  &kp N3  &kp EQUAL  &trans
                                      &kp N0  &trans         &trans      &trans    &mo 3   &kp N0
             >;
