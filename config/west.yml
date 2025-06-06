@@ -1,11 +1,6 @@
 manifest:
-  defaults:
-    remote: urob
-    revision: v0.2 # Pin everything to v0.2
 
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: urob
@@ -22,12 +17,6 @@ manifest:
       remote: urob
       revision: main
     - name: zmk-helpers
-      remote: urob
-      revision: main
-    - name: zmk-leader-key
-      remote: urob
-      revision: main
-    - name: zmk-tri-state
       remote: urob
       revision: main
 
