@@ -112,7 +112,7 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 &kp ESC    &kp Q        &kp W       &kp E       &kp R              &kp T                    &kp Y      &kp U               &kp I           &kp O         &kp P            NAV_BSPC
 &kp TAB    &kp A        &kp S       &kp D       &hml LEFT_SHIFT F  &kp G                    &kp H      &hmr RIGHT_SHIFT J  &kp K           &kp L         &kp SEMI         &kp BACKSLASH
 &kp LCTRL  &hml LCTRL Z &hml LWIN X &hml LALT C &kp V              &kp B                    &kp N      &kp M               &hmr RALT COMMA  &hmr RGUI DOT  &hmr RCTRL SLASH  &kp RSHFT
-                                    NAV_BSPC    &lt 2 ESC          &lt 3 RET                &kp SPACE  &lt 1 TAB           &lt 5 DEL
+                                    NAV_BSPC    &lt 1 ESC          &lt 3 RET                &kp SPACE  &lt 2 TAB           NAV_DEL
             >;
         };
 
