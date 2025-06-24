@@ -88,29 +88,6 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
 
-// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
-#define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
-              tapping-term-ms = <200>;)
-
-// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
-#define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
-              tapping-term-ms = <200>;)
-
-// Tap: backspace | Lshft + tap: delete | Rshft + tap: shift-delete.
-ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
-              mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <MOD_RSFT>;)
-
-// Tap: copy | double-tap: cut.
-ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
-              tapping-term-ms = <200>;)
-
-
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 #define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
