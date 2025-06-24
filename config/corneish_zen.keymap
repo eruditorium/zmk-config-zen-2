@@ -4,6 +4,7 @@
 #include <zmk-helpers/key-labels/42.h>
 #include <zmk-helpers/helper.h>
 #include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/greek.dtsi"
 
 / {
     chosen { zmk,physical-layout = &foostan_corne_6col_layout; };
@@ -180,8 +181,8 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
             //                                      `--------------------------'  `--------------------------'
 
             bindings = <
-            &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                &kp CARET  &kp RA(Y)      &kp AMPS      &kp RA(P)        &kp RA(LS(COMMA))  &kp LC(BSPC)
-            &trans     &kp RA(Q)  &kp RA(S)  &kp RA(F)  &kp RA(G)  &kp TILDE                NAV_LEFT   NAV_DOWN       NAV_UP        NAV_RIGHT        &kp MU             &none
+            &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                &kp CARET  &de_ue         &kp AMPS      &de_oe           &kp RA(LS(COMMA))  &kp LC(BSPC)
+            &trans     &de_ae     &de_eszett &kp RA(F)  &kp RA(G)  &kp TILDE                NAV_LEFT   NAV_DOWN       NAV_UP        NAV_RIGHT        &el_mu             &none
             &trans     &none      &none      &none      &none      &none                    &kp BSLH   &kp PIPE       &kp RA(N2)    &kp RA(N3)       &none              &trans
                                              NAV_DEL    &mo 3      &trans                   &trans     &trans         &trans
             >;
