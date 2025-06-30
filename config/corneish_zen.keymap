@@ -72,13 +72,13 @@
             quick-tap-ms = <220>;                                                        
             hold-trigger-key-positions = <0>;
         };
-        masked_home: mod_tap {
+        masked_home: masked_home {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp HOME>, <&kp HOME>;
             mods = <(MOD_LCTL)>;
         };
-        masked_end: mod_tap {
+        masked_end: masked_end {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp END>, <&kp END>;
