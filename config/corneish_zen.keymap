@@ -51,12 +51,53 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+         /* Nav cluster */
+         mt_home: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            bindings = <&masked_home>, <&kp>;
+            flavor = "tap-preferred";                                                    
+            tapping-term-ms = <220>;                                                     
+            quick-tap-ms = <220>;                                                        
+            hold-trigger-key-positions = <0>;
+        };
+        mt_end: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            bindings = <&masked_end>, <&kp>;
+            flavor = "tap-preferred";                                                    
+            tapping-term-ms = <220>;                                                     
+            quick-tap-ms = <220>;                                                        
+            hold-trigger-key-positions = <0>;
+        };
+        masked_home: mod_tap {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>
+            bindings = <&kp HOME>, <&kp HOME>;
+            mods = (MOD_LCTL);
+        };
+        masked_end: mod_tap {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>
+            bindings = <&kp END>, <&kp END>;
+            mods = (MOD_LCTL);
+        };
     };
+   
 };
 
+
+/* Nav cluster */
+#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+#define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
+#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
+#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+
 / {
-    
-macros {};
 keymap {
         compatible = "zmk,keymap";
 
