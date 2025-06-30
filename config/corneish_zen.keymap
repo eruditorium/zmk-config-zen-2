@@ -121,13 +121,16 @@ keymap {
 &trans      &none         &none         &none         &none         &none           &kp C_VOL_DN  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                         &trans        &trans        &trans          &trans        &trans  &trans
 >;
-    };layer_4 {
+    };
+    layer_4 {
          bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
->;};
+>;
+};
+};
 };
 
 / { 
