@@ -9,6 +9,87 @@
     };
 };
 
+
+// Define the key positions for convenience
+// Corne standard 42-key matrix
+#define LEFT_KEYS  0  1  2  3  4  5    12 13 14 15 16 17    24 25 26 27 28 29
+#define RIGHT_KEYS 6  7  8  9 10 11    18 19 20 21 22 23    30 31 32 33 34 35
+#define THUMBS     36 37 38 39 40 41
+
+// Define positions for your specific exception keys
+// Based on standard QWERTY Corne positions:
+// Z=24, X=25, C=26, V=27, F=16, J=19
+#define KEY_X 25
+#define KEY_C 26
+#define KEY_V 27
+// Assuming Enter is a thumb or right-side key, it's covered by RIGHT_KEYS or THUMBS.
+// If you have a dedicated Enter on the left, find its index and add it.
+
+/ {
+    behaviors {
+        // -----------------------------------------------------------------------------------------
+        // 1. FAST / AGILE SHIFT (F & J)
+        // -----------------------------------------------------------------------------------------
+        // - Flavor: Balanced (registers fast rolls like Shift+Char immediately)
+        // - Timeout: 175ms (fast)
+        // - Positional: Enforces cross-hand usage for zero errors
+        
+        hm_shift_l: homerow_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_SHIFT_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_KEYS THUMBS>; // Only activates if pressing Right/Thumb keys
+        };
+
+        hm_shift_r: homerow_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_SHIFT_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_KEYS THUMBS>; // Only activates if pressing Left/Thumb keys
+        };
+
+        // -----------------------------------------------------------------------------------------
+        // 2. SAFE / DELIBERATE MODS (Z, X, C ... / . ,)
+        // -----------------------------------------------------------------------------------------
+        // - Flavor: Tap-preferred (prevents accidental fires when typing fast)
+        // - Timeout: 250ms (slower, must hold deliberately)
+        // - Idle: 150ms (Must not have been typing recently to activate)
+        
+        hm_mod_l: homerow_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_MOD_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>; // "The Magic Setting": Prevents misfires during fast typing
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            // triggers on Right side, Thumbs, AND specific Left-hand shortcuts (Ctrl+C/V/X)
+            hold-trigger-key-positions = <RIGHT_KEYS THUMBS KEY_X KEY_C KEY_V>; 
+        };
+
+        hm_mod_r: homerow_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_MOD_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_KEYS THUMBS>;
+        };
+    };
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -16,15 +97,17 @@
         default_layer {
             display-name = "QWERTY";
 // --------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// |  TAB |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
             bindings = <
-&kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-               &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp TAB   &kp Q  &kp W  &kp E         &kp R          &kp T             &kp Y            &kp U           &kp I           &kp O    &kp P     &kp BSPC
+   &kp ESC   &kp A  &kp S  &kp D         &hm_shift_l LSHFT F &kp G        &kp H            &hm_shift_r RSHFT J  &kp K      &kp L    &kp SEMI  &kp SQT
+   &kp LSHFT &hm_mod_l LCTRL Z  &hm_mod_l LGUI X &hm_mod_l LALT C  &kp
+   V          &kp B             &kp N            &kp M           &hm_mod_r RALT
+   COMMA  &hm_mod_r RGUI DOT &hm_mod_r RCTRL FSLH &kp RSHFT
+                  &kp BSPC &mo 1 &kp RET    &kp SPC &mo 2 &hm_mod_r RALT DEL
             >;
         };
 
@@ -56,6 +139,83 @@
 &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
             >;
+        };
+    };
+};
+
+
+/ {
+    macros {
+        // Select the current word
+        select_word: select_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings
+                = <&kp LCTRL &kp LEFT>        // Move to start of word
+                , <&kp LCTRL &kp LSHFT &kp RIGHT> // Select to end of word
+                ;
+        };
+
+        // Select the current line
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings
+                = <&kp END>                   // Move to end of line
+                , <&kp LSHFT &kp HOME>        // Select to start of line
+                ;
+        };
+    };
+};
+
+
+/ {
+  combos {
+        compatible = "zmk,combos";
+        timeout-ms = <50>;
+
+        // -----------------------------------------------------------------------------------------
+        // SPECIAL UTILITIES
+        // -----------------------------------------------------------------------------------------
+        // Both Shifts (F+J) = Caps Word
+        combo_capsword { key-positions = <16 19>; bindings = <&caps_word>; };
+
+        // -----------------------------------------------------------------------------------------
+        // SYMBOLS & BRACKETS
+        // -----------------------------------------------------------------------------------------
+        // Left Hand Combos
+        combo_minus { key-positions = <15 16>; bindings = <&kp MINUS>; }; // d + f
+        combo_lbrc  { key-positions = <4 5>;   bindings = <&kp LBRC>;  }; // r + t
+        combo_lbkt  { key-positions = <16 17>; bindings = <&kp LBKT>;  }; // f + g
+        combo_lpar  { key-positions = <28 29>; bindings = <&kp LPAR>;  }; // v + b
+        combo_dqt   { key-positions = <27 28>; bindings = <&kp DQT>;   }; // c + v (Double Quote ")
+        combo_grave { key-positions = <14 15>; bindings = <&kp GRAVE>; }; // s + d (Grave `)
+
+        // Right Hand Combos
+        combo_under { key-positions = <19 20>; bindings = <&kp UNDER>; }; // j + k
+        combo_rbrc  { key-positions = <6 7>;   bindings = <&kp RBRC>;  }; // y + u
+        combo_rbkt  { key-positions = <18 19>; bindings = <&kp RBKT>;  }; // h + j
+        combo_rpar  { key-positions = <30 31>; bindings = <&kp RPAR>;  }; // n + m
+        combo_sqt   { key-positions = <31 32>; bindings = <&kp SQT>;   }; // m + , (Single Quote ')
+
+        // -----------------------------------------------------------------------------------------
+        // NAVIGATION & EDITING
+        // -----------------------------------------------------------------------------------------
+        combo_esc   { key-positions = <1 2>;   bindings = <&kp ESC>;   }; // q + w
+        combo_tab   { key-positions = <13 14>; bindings = <&kp TAB>;   }; // a + s
+        combo_bksp  { key-positions = <9 10>;  bindings = <&kp BSPC>;  }; // o + p
+        combo_del   { key-positions = <21 22>; bindings = <&kp DEL>;   }; // l + ;
+
+
+        // BOTH SHIFTS (F and J) TOGGLES CAPS WORD
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <16 19>; // 16 is F, 19 is J on standard Corne
+            bindings = <&caps_word>;
         };
     };
 };
