@@ -140,6 +140,36 @@
                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
             >;
         };
+
+// 3
+         adjust {
+           display-name = "ADJ";
+
+         // Adjust
+         //  ,-----------------------------------------------------.                    ,---------------------------    --------------------------.
+         //  |    ▼   |        |        |        |        | Print  |                    | CAPSLCK|        |        |            |        |WordBspc|
+         //  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+    --------+--------+--------|
+         //  | BT CLR |  BT 0  |  BT 1  |  BT 2  |  BT 3  |  BT 4  |                    | NUMLCK |        |        |            |        |   ▼    |
+         //  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+    --------+--------+--------|
+         //  |    ▼   |        |        |        |        |        |                    |        |        |        |            |        |   ▼    |
+         //  `--------+--------+--------+--------+--------+--------+--------.  .--------+--------+--------+--------+    --------+--------+--------'
+         //                                      │    ▼   │    ▼   │    ▼   │  │    ▼   │    ▼   │    ▼   │
+         //                                      `--------------------------'  `--------------------------'
+             bindings = <
+             &trans      &none         &none         &none         &none         &kp PSCRN       &kp CAPS               &none   &none   &none   &none  &kp LC(BSPC)
+             &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp KP_NUMLOCK         &none   &none   &none   &none  &none
+             &trans      &none         &none         &none         &none         &none           &none                  &none   &none   &none   &none  &trans
+                                       &trans        &trans        &trans                        &trans    &trans       &trans
+             >;
+         };
+
+
+
+
+
+
+
+
     };
 };
 
